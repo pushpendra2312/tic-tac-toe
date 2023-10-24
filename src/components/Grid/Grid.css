@@ -1,0 +1,22 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rowContainer{
+    display: flex;
+    gap: 12px;
+}
+
+.cells{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    border-radius: 8px;
+    color: #242424;
+    font-size: 96px;
+}
