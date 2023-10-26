@@ -1,15 +1,10 @@
 .mainContainer{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
     gap: 12px;
 }
 
-.rowContainer{
-    display: flex;
-    gap: 12px;
-}
-
-.cells{
+.cell{
     width: 150px;
     height: 150px;
     display: flex;
