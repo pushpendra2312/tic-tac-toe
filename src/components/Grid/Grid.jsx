@@ -14,6 +14,7 @@ const WINNER_CONDITIONS_ARR = [
 
 const Grid = () => {
   const [currentUser, setCurrentUser] = useState(null)
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   const toggleCurrentUserValue = () => {
     return currentUser === "X" ? "O" : "X"
@@ -40,8 +41,8 @@ const Grid = () => {
         })
       })
     ) {
-      // reset game
-      resetGame()
+      // show modal
+      setIsModalVisible(true)
     }
     return () => {}
   }, [currentUser])
@@ -51,6 +52,11 @@ const Grid = () => {
       console.log(element)
       element.textContent = ""
     })
+  }
+
+  const handleResetBtnClick = () => {
+    setIsModalVisible(false)
+    resetGame()
   }
 
   console.log(currentUser)
@@ -64,6 +70,14 @@ const Grid = () => {
           )
         })}
       </div>
+      {isModalVisible ? (
+        <div className="modal">
+          <div>
+            <h1>Winner is {currentUser}</h1>
+            <button onClick={handleResetBtnClick}>Reset Game</button>
+          </div>
+        </div>
+      ) : null}
     </>
   )
 }
