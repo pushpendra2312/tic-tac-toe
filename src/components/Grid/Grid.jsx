@@ -57,12 +57,16 @@ const Grid = () => {
   const handleResetBtnClick = () => {
     setIsModalVisible(false)
     resetGame()
+    setCurrentUser(null)
   }
 
   console.log(currentUser)
 
   return (
     <>
+      <div>
+        <h1>Current User: {currentUser === "X" ? "O" : "X"}</h1>
+      </div>
       <div className="mainGridContainer" onClick={handleClick}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((cell, index) => {
           return (
